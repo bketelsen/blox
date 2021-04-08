@@ -124,7 +124,6 @@ func (r *Repository) load() error {
 			// not a dir, must be file
 			// we only care about files in
 			// version directories
-			fmt.Println("file", len(paths), path)
 			if len(paths) == 4 {
 				if d.Name() == "schema.cue" {
 					bb, err := os.ReadFile(path)

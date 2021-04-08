@@ -9,6 +9,7 @@ import (
 
 	"cuelang.org/go/cue"
 	"github.com/hashicorp/go-multierror"
+	"github.com/pterm/pterm"
 )
 
 //go:embed config.cue
@@ -267,13 +268,20 @@ func (t *Table) CueDataPath() cue.Path {
 
 // Insert adds a record
 func (d *Database) Insert(table Table, record map[string]interface{}) error {
+	pterm.Debug.Println("\t\t\td.db.FillPath()")
+
 	dataFill := d.db.FillPath(table.CueDataPath(), record)
+
+	pterm.Debug.Println("\t\t\tdataFill.Validate()")
 	err := dataFill.Validate()
 	if nil != err {
 		return err
 	}
 
+	pterm.Debug.Println("\t\t\tStart: d.db.Unify()")
+	fmt.Println(dataFill)
 	d.db = d.db.Unify(dataFill)
+	pterm.Debug.Println("\t\t\tDone: d.db.Unify()")
 
 	return nil
 }

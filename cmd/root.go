@@ -13,6 +13,7 @@ import (
 
 var cfgFile string
 var quiet bool
+var debug bool
 var Version string
 
 // rootCmd represents the base command when called without any subcommands
@@ -29,6 +30,10 @@ to quickly create a Cobra application.`,
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		if quiet {
 			pterm.DisableOutput()
+		} else {
+			if debug {
+				pterm.EnableDebugMessages()
+			}
 		}
 	},
 	// Uncomment the following line if your bare application
@@ -52,6 +57,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.blox.yaml)")
 
 	rootCmd.PersistentFlags().BoolVar(&quiet, "quiet", false, "disable logging")
+	rootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug messages")
 
 }
 
