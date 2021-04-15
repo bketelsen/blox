@@ -22,7 +22,6 @@ export async function getPage(slug) {
 `});
 
   const pages = data.allPages;
-  console.log(pages)
   if (pages.length > 0) {
     return pages[0]
   }
@@ -51,10 +50,7 @@ export async function getSections() {
 `});
 
   const sections = data.allSections;
-
   return sections
-
-
 }
 
 export async function getArticles() {

@@ -2,20 +2,26 @@ import '@/styles/globals.css';
 
 import App from "next/app";
 import Layout from '@/components/Layout';
-import { createContext } from "react";
 import { getSections } from "@/lib/cms";
-
-export const GlobalContext = createContext({});
-
 
 function MyApp({ Component, pageProps }) {
   const { sections } = pageProps;
+  const navigation = [
+    { name: 'Home', href: '/', current: true },
+
+    {
+      name: 'Documentation',
+      current: false,
+      children: sections,
+    },
+
+    { name: 'GitHub', href: 'https://github.com/cueblox/blox', current: false },
+
+  ]
   return (
-    <GlobalContext.Provider value={sections}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </GlobalContext.Provider>
+    <Layout navigation={navigation}>
+      <Component {...pageProps} />
+    </Layout>
 
   )
 }

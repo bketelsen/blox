@@ -1,7 +1,7 @@
-import { GlobalContext } from "./_app";
 import { getPage } from "@/lib/cms";
 
 export default function Index() {
+
   return (
     <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
       <div className="text-center">
@@ -40,7 +40,6 @@ export async function getStaticProps() {
 
   const page = await getPage("index");
 
-  console.log(page)
 
   return {
     props: {
