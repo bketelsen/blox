@@ -10,8 +10,8 @@ import (
 
 	"cuelang.org/go/encoding/yaml"
 	"github.com/cueblox/blox"
-	"github.com/cueblox/blox/internal/cuedb"
-	"github.com/cueblox/blox/internal/cueutils"
+	"github.com/cueblox/blox/cuedb"
+	"github.com/cueblox/blox/cueutils"
 	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 )

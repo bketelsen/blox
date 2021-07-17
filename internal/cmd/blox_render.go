@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/cueblox/blox"
-	"github.com/cueblox/blox/internal/cuedb"
+	"github.com/cueblox/blox/cuedb"
 	"github.com/pterm/pterm"
 	"github.com/spf13/cobra"
 )

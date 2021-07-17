@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	"github.com/cueblox/blox"
-	"github.com/cueblox/blox/internal/cuedb"
-	"github.com/cueblox/blox/internal/encoding/markdown"
+	"github.com/cueblox/blox/cuedb"
+	"github.com/cueblox/blox/encoding/markdown"
 	"github.com/disintegration/imaging"
 	"github.com/goccy/go-yaml"
 	"github.com/h2non/filetype"
