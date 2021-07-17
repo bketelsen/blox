@@ -11,7 +11,6 @@ require (
 	github.com/gookit/color v1.4.2 // indirect
 	github.com/h2non/filetype v1.1.1
 	github.com/hashicorp/go-multierror v1.0.0
-	github.com/otiai10/copy v1.5.0
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pterm/pterm v0.12.13
 	github.com/spf13/cobra v1.1.3

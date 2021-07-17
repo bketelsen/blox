@@ -15,12 +15,6 @@ func newSchemaCmd() *schemaCmd {
 		Short: "Create, Manage, and Version your Schemata",
 	}
 
-	cmd.AddCommand(
-		newSchemaListCmd().cmd,
-		newSchemaNewCmd().cmd,
-		newSchemaVersionCmd().cmd,
-	)
-
 	root.cmd = cmd
 	return root
 }

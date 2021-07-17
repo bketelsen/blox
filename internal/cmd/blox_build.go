@@ -10,7 +10,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"cuelang.org/go/cue"
 	"github.com/cueblox/blox"
 	"github.com/cueblox/blox/internal/cuedb"
 	"github.com/cueblox/blox/internal/encoding/markdown"
@@ -62,10 +61,11 @@ func newBloxBuildCmd() *bloxBuildCmd {
 			schemataDir, err := cfg.GetString("schemata_dir")
 			cobra.CheckErr(err)
 
-			remotes, err := cfg.GetList("remotes")
+			/*remotes, err := cfg.GetList("remotes")
 			if err == nil {
 				cobra.CheckErr(parseRemotes(remotes))
 			}
+			*/
 
 			err = processImages(cfg)
 			if err != nil {
@@ -234,6 +234,7 @@ func buildDataSets(engine *cuedb.Engine, cfg *blox.Config) error {
 	return nil
 }
 
+/*
 func parseRemotes(value cue.Value) error {
 	iter, err := value.List()
 	if err != nil {
@@ -269,13 +270,14 @@ func parseRemotes(value cue.Value) error {
 		if err != nil {
 			return err
 		}
-		err = ensureRemote(n, v, r)
-		if err != nil {
-			return err
-		}
+		//err = ensureRemote(n, v, r)
+		//if err != nil {
+		//return err
+		//}
 	}
 	return nil
 }
+*/
 
 // processImages scans the static dir for images
 // when it finds an image, it reads the image metadata

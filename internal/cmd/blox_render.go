@@ -54,10 +54,12 @@ func newBloxRenderCmd() *bloxRenderCmd {
 			schemataDir, err := cfg.GetString("schemata_dir")
 			cobra.CheckErr(err)
 
-			remotes, err := cfg.GetList("remotes")
-			if err == nil {
-				cobra.CheckErr(parseRemotes(remotes))
-			}
+			/*
+				remotes, err := cfg.GetList("remotes")
+				if err == nil {
+					cobra.CheckErr(parseRemotes(remotes))
+				}
+			*/
 
 			pterm.Debug.Printf("\t\tUsing schemata from: %s\n", schemataDir)
 

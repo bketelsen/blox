@@ -56,9 +56,7 @@ func newRootCmd(version string, exit func(int)) *rootCmd {
 	cmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug logging, overrides 'quiet' flag")
 
 	cmd.AddCommand(
-		newRemoteCmd().cmd,
 		newSchemaCmd().cmd,
-		newRepoCmd().cmd,
 		newCompletionCmd().cmd,
 		newDocsCmd().cmd,
 		newBloxBuildCmd().cmd,
